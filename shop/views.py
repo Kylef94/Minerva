@@ -7,5 +7,5 @@ def home(request):
     return HttpResponse("Hello, World. Welcome to Minerva")
 
 def product_all(request):
-    #products = Product.products.all() {'products': products}
-    return render(request, 'shop/home.html')
+    products = Product.products.all()
+    return render(request, 'shop/home.html', {'products': products})
