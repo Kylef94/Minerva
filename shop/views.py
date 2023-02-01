@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
-# Create your views here.
+from .models import Category, Product
 
 def home(request):
     return HttpResponse("Hello, World. Welcome to Minerva")
+
+def product_all(request):
+    #products = Product.products.all() {'products': products}
+    return render(request, 'shop/home.html')
