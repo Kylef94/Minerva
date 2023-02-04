@@ -25,7 +25,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
     description = models.CharField('description', max_length=200)
-    image = models.ImageField(upload_to='media/images/', default='media/images/default.png')
+    image = models.ImageField(upload_to='media/images/', default='media/images/default.jpg')
     slug = models.SlugField(max_length=255, default=name)
     in_stock = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
